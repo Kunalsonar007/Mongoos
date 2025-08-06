@@ -1,0 +1,14 @@
+//Update collection emp_professional_details , give incentive 5000 to employee whose working hours is greater than 45 per week.
+
+db.emp_professional_details.updateMany(
+    { working_hours_per_week: { $gt: 45 } },
+    { $set: { incentive: 5000 } }
+);
+
+
+//Add 1000 to salary employee whose designation is accountant.
+db.emp_professional_details.updateMany(
+    { designation: "accountant" },
+    { $inc: { salary: 1000 } }
+);
+
